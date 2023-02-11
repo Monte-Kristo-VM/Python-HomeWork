@@ -7,4 +7,21 @@ def exponentiation(a, b):
     b -= 1
     return a * exponentiation(a, b)
 
-print(exponentiation(2,10))
+
+while True:
+    number = input('Введите число, которое нужно возвести в степень: ')
+    if number.isdigit() and number != '0':
+        number = int(number)
+        break
+    else:
+        print('Некорректный ввод!')
+
+while True:
+    exp = input('Введите степень числа: ')
+    if exp.isdigit() and exp != '0':
+        exp = int(exp)
+        break
+    else:
+        print('Некорректный ввод!')
+
+print(f'Число {number} в степени {exp} = {exponentiation(number, exp)}')
