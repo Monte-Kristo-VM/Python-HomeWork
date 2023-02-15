@@ -31,4 +31,4 @@ arithmetic_progression = []
 for i in range(n_element):
     arithmetic_progression.append(first_element + i*def_element)
 
-print(f'Искомая арифметическая прогрессия: {arithmetic_progression}')
+print(f'Арифметическая прогрессия: {arithmetic_progression}')
