@@ -5,6 +5,7 @@ class PhoneBook:
         self.phone_book = []
 
     def open_phone_book(self):
+        self.phone_book = []
         with open(self.path, 'r', encoding='UTF-8') as data:
             file = data.readlines()
             for contact in file:
@@ -42,6 +43,13 @@ class PhoneBook:
                     search_result.append(contact)
         return search_result
 
+    def find_contact_select(self, contact_info: str) -> list:
+        search_result = []
+        for i in range(len(self.phone_book)):
+            for fild in self.phone_book[i].values():
+                if contact_info in fild:
+                    search_result.append([i, self.phone_book[i]])
+        return search_result
 
     def change_contact(self, i: int, new_contact_info: dict):
         self.phone_book[i] = new_contact_info
